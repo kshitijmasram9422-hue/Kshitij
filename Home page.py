@@ -1,125 +1,154 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Kshitij Masram"
-)
-st.title("kshitij")
-st.sidebar.subheader("Select the page above.")
-
-import streamlit as st
-
-st.set_page_config(
     page_title="Kshitij Masram",
     page_icon="🧬",
     layout="wide"
 )
 
-# HERO SECTION
-st.title("Kshitij Masram")
-st.subheader("Biotechnology | Bioprocess Engineering | Fermentation Technology")
+st.markdown("""
+<style>
 
-st.markdown("---")
+/* Background */
+.stApp{
+    background: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+}
 
-# ABOUT
-st.header("About Me")
+/* Hero Animation */
+.hero{
+    text-align:center;
+    padding:40px;
+    animation: fadeIn 2s ease-in-out;
+}
 
-st.write("""
-I am a Biotechnology graduate with a strong interest in Bioprocess Engineering,
-Fermentation Technology, Industrial Biotechnology, and Process Development.
+.hero h1{
+    color:white;
+    font-size:60px;
+}
 
-I enjoy learning new technologies, solving scientific problems, and exploring
-innovative approaches in biotechnology and bioprocessing.
-""")
+.hero h3{
+    color:#38bdf8;
+}
 
-st.markdown("---")
+/* Card Design */
+.card{
+    background-color:rgba(255,255,255,0.08);
+    padding:25px;
+    border-radius:15px;
+    margin:10px;
+    transition:0.4s;
+    color:white;
+}
 
-# SKILLS
-st.header("Skills")
+.card:hover{
+    transform:translateY(-10px);
+}
 
-col1, col2, col3 = st.columns(3)
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
 
-with col1:
-    st.success("""
-    ### Biotechnology
-    - Microbiology
-    - Molecular Biology
-    - Biochemistry
-    - Cell Culture
-    """)
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="hero">
+    <h1>Kshitij Masram</h1>
+    <h3>Biotechnology | Bioprocess Engineering</h3>
+</div>
+""", unsafe_allow_html=True)
+st.markdown("""
+<div class="hero">
+    <h1>Kshitij Masram</h1>
+    <h3>Biotechnology | Bioprocess Engineering</h3>
+</div>
+""", unsafe_allow_html=True)
+col1,col2 = st.columns([1,2])
+
+
 
 with col2:
-    st.info("""
-    ### Bioprocess Engineering
-    - Fermentation
-    - Bioreactors
-    - Downstream Processing
-    - Process Optimization
-    """)
+    st.markdown("""
+    <div class="card">
+        <h2>About Me</h2>
+        <p>
+        Biotechnology graduate passionate about
+        fermentation technology, industrial biotechnology,
+        and bioprocess engineering.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+st.header("Skills")
 
-with col3:
-    st.warning("""
-    ### Additional Skills
-    - Data Analysis
-    - Research
-    - Scientific Writing
-    - Problem Solving
-    """)
+c1,c2,c3 = st.columns(3)
 
-st.markdown("---")
+with c1:
+    st.markdown("""
+    <div class="card">
+    <h3>🧬 Biotechnology</h3>
+    <p>Microbiology<br>Biochemistry<br>Molecular Biology</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-# PROJECTS
-st.header("Projects")
+with c2:
+    st.markdown("""
+    <div class="card">
+    <h3>⚙️ Bioprocess</h3>
+    <p>Fermentation<br>Bioreactors<br>DSP</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-project1, project2 = st.columns(2)
+with c3:
+    st.markdown("""
+    <div class="card">
+    <h3>📊 Research</h3>
+    <p>Data Analysis<br>Scientific Writing<br>Problem Solving</p>
+    </div>
+    """, unsafe_allow_html=True)
+    st.header("Skill Level")
 
-with project1:
-    st.subheader("Fermentation Studies")
-    st.write("""
-    Research involving fermentation processes,
-    microbial growth and process optimization.
-    """)
+    st.write("Biotechnology")
+    st.progress(90)
 
-with project2:
-    st.subheader("Bioprocess Development")
-    st.write("""
-    Studies focused on process design,
-    scale-up concepts and industrial biotechnology.
-    """)
+    st.write("Fermentation")
+    st.progress(85)
 
-st.markdown("---")
+    st.write("Bioprocess Engineering")
+    st.progress(80)
 
-# EDUCATION
-st.header("Education")
+    st.write("German Language")
+    st.progress(60)
+    st.header("Projects")
 
-st.write("""
-**Master of Science (Biotechnology)**
+    st.markdown("""
+    <div class="card">
+    <h3>Fermentation Research</h3>
+    <p>Study of microbial growth and fermentation optimization.</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-Advanced studies in biotechnology, microbiology,
-biochemistry and bioprocess-related subjects.
-""")
+    st.markdown("""
+    <div class="card">
+    <h3>Bioprocess Development</h3>
+    <p>Scale-up and process design concepts for industrial biotechnology.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    st.header("Contact")
 
-st.markdown("---")
-
-# INTERESTS
-st.header("Interests")
-
-st.write("""
-- Industrial Biotechnology
-- Fermentation Technology
-- Bioprocess Engineering
-- Sustainable Technologies
-- Scientific Research
-- German Language Learning
-""")
-
-st.markdown("---")
-
-# CONTACT
-st.header("Contact")
-
-st.write("📧 Email: your_email@example.com")
-st.write("🔗 LinkedIn: Add your LinkedIn URL")
-st.write("📍 Location: India")
-
+    st.markdown("""
+    <div class="card">
+    📧 your_email@example.com<br><br>
+    🔗 LinkedIn Profile<br><br>
+    📍 India
+    </div>
+    """, unsafe_allow_html=True)
 
 
