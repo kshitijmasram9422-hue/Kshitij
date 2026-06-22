@@ -121,5 +121,5 @@ st.write("📧 Email: your_email@example.com")
 st.write("🔗 LinkedIn: Add your LinkedIn URL")
 st.write("📍 Location: India")
 
-st.image("profile.jpg", width=250)
+
 
